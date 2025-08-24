@@ -35,40 +35,49 @@ export default function Step8Payment() {
       setLoading(false);
     }
   }
+  const stripeKey = process.env.NEXT_PUBLIC_STRIPE_PUBLISHABLE_KEY;
+  const paypalClientId = process.env.NEXT_PUBLIC_PAYPAL_CLIENT_ID;
   return (
     <div className="space-y-4">
       <h1 className="text-2xl font-bold">Payment</h1>
       <p>Total due: £50 service fee + $21 official ESTA fee (paid separately).</p>
       {error && <p className="text-red-600">{error}</p>}
-      <button
-        onClick={handleStripePayment}
-        disabled={loading}
-        className="px-4 py-2 rounded-md bg-blue-600 text-white"
-      >
-        Pay with Stripe
-      </button>
-      <div>
-        <PayPalScriptProvider options={{ 'client-id': process.env.NEXT_PUBLIC_PAYPAL_CLIENT_ID! }}>
-          <PayPalButtons
-            createOrder={async () => {
-              // call our API to create PayPal order
-              const res = await fetch('/api/paypal', {
-                method: 'POST',
-                headers: { 'Content-Type': 'application/json' },
-                body: JSON.stringify({ amount: '50.00' }),
-              });
-              const data = await res.json();
-              return data.orderId;
-            }}
-            onApprove={async (data) => {
-              // finalize the order on our backend
-              await fetch(`/api/paypal?orderId=${data.orderID}`, { method: 'PUT' });
-              // redirect to final submission step
-              router.push('/apply/step9-submission');
-            }}
-          />
-        </PayPalScriptProvider>
-      </div>
+      {/* Show Stripe button only if key is configured */}
+      {stripeKey ? (
+        <button
+          onClick={handleStripePayment}
+          disabled={loading}
+          className="px-4 py-2 rounded-md bg-blue-600 text-white shadow-md hover:bg-blue-700 active:translate-y-px"
+        >
+          Pay with Stripe
+        </button>
+      ) : (
+        <p className="text-yellow-700">Stripe configuration missing. Please set your Stripe keys.</p>
+      )}
+      {/* Render PayPal buttons only if client ID exists */}
+      {paypalClientId ? (
+        <div>
+          <PayPalScriptProvider options={{ 'client-id': paypalClientId }}>
+            <PayPalButtons
+              createOrder={async () => {
+                const res = await fetch('/api/paypal', {
+                  method: 'POST',
+                  headers: { 'Content-Type': 'application/json' },
+                  body: JSON.stringify({ amount: '50.00' }),
+                });
+                const data = await res.json();
+                return data.orderId;
+              }}
+              onApprove={async (data) => {
+                await fetch(`/api/paypal?orderId=${data.orderID}`, { method: 'PUT' });
+                router.push('/apply/step9-submission');
+              }}
+            />
+          </PayPalScriptProvider>
+        </div>
+      ) : (
+        <p className="text-yellow-700">PayPal configuration missing. Please set your PayPal client ID.</p>
+      )}
     </div>
   );
 }

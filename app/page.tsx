@@ -9,14 +9,16 @@ export default function Home() {
   return (
     <div className="space-y-12">
       {/* Hero section */}
-      <section className="text-center">
-        <h1 className="text-4xl font-bold mb-4">Apply for your U.S. ESTA with Ease</h1>
-        <p className="text-lg mb-6">
+      <section className="text-center py-16 md:py-24 bg-gradient-to-br from-sky-50 via-white to-indigo-50">
+        <h1 className="text-[clamp(28px,5vw,40px)] font-extrabold mb-4">
+          Apply for your U.S. ESTA with Ease
+        </h1>
+        <p className="text-lg mb-8 max-w-2xl mx-auto">
           Fast, secure, and expert assistance with your travel authorization to the United States.
         </p>
         <Link
           href="/apply"
-          className="inline-block bg-blue-600 text-white px-6 py-3 rounded-md hover:bg-blue-700"
+          className="inline-block bg-blue-600 hover:bg-blue-700 text-white rounded-xl px-6 py-3 shadow-[0_6px_0_0_rgba(0,0,0,0.15)] active:translate-y-[1px] active:shadow-[0_4px_0_0_rgba(0,0,0,0.15)] transition-all"
         >
           Apply Now
         </Link>
