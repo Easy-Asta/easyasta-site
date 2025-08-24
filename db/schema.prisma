@@ -1,0 +1,64 @@
+// Prisma schema for EasyAster
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider   = "postgresql"
+  url        = env("POSTGRES_PRISMA_URL")
+  directUrl  = env("POSTGRES_URL_NON_POOLING")
+}
+
+model User {
+  id         String   @id @default(cuid())
+  email      String   @unique
+  name       String?
+  role       String   @default("user") // 'user', 'agent', 'admin'
+  applications Application[]
+  createdAt  DateTime @default(now())
+  updatedAt  DateTime @updatedAt
+}
+
+model Application {
+  id            String   @id @default(cuid())
+  user          User?    @relation(fields: [userId], references: [id])
+  userId        String?
+  status        String   @default("pending")
+  data          Json
+  payment       Payment?
+  createdAt     DateTime @default(now())
+  updatedAt     DateTime @updatedAt
+}
+
+model Payment {
+  id             String   @id @default(cuid())
+  application    Application @relation(fields: [applicationId], references: [id])
+  applicationId  String   @unique
+  provider       String // 'stripe' or 'paypal'
+  sessionId      String
+  amount         Int
+  currency       String
+  status         String
+  createdAt      DateTime @default(now())
+  updatedAt      DateTime @updatedAt
+}
+
+model Log {
+  id        String   @id @default(cuid())
+  actorId   String?
+  actor     User?    @relation(fields: [actorId], references: [id])
+  action    String
+  args      Json
+  result    Json?
+  error     String?
+  createdAt DateTime @default(now())
+}
+
+model ChatLog {
+  id        String   @id @default(cuid())
+  userId    String?
+  user      User?    @relation(fields: [userId], references: [id])
+  messages  Json
+  createdAt DateTime @default(now())
+}
