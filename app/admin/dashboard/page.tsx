@@ -1,5 +1,5 @@
-import { getCurrentUser } from '..
-  mport { prisma } from '../../../lib/db';
+import { getCurrentUser } from '../../../lib/auth';
+import { prisma } from '../../../lib/db';
 
 
 export default async function AdminDashboard() {
