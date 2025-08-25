@@ -1,5 +1,6 @@
-import { getCurrentUser } from '@/lib/auth';
-import { prisma } from '@/lib/db';
+// Changed to relative imports to avoid reliance on path aliases.
+import { getCurrentUser } from '../../../lib/auth';
+import { prisma } from '../../../lib/db';
 
 export default async function LogsPage() {
   const user = await getCurrentUser();
