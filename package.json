@@ -23,8 +23,9 @@
     "@stripe/react-stripe-js": "^2.0.0",
     "@paypal/react-paypal-js": "^7.0.0",
     "@paypal/checkout-server-sdk": "^1.0.3",
-    "@vercel/bl^1.0.0,
-    "resend": "^2.0.0
+  "@vercel/blob": "^1.0.0",
+   "resend": "^2.0.0",
+
     "@ai-sdk/openai": "^1.0.0",
     "ai": "^1.0.0",
     "next-i18next": "^14.0.0"
