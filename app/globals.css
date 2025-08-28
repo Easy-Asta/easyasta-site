@@ -1,0 +1,21 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --gradient: linear-gradient(135deg, #0ea5e9 0%, #6366f1 50%, #22d3ee 100%);
+}
+
+html, body {
+  height: 100%;
+  scroll-behavior: smooth;
+}
+
+.btn-3d {
+  @apply rounded-2xl px-6 py-3 font-semibold text-white shadow-3d active:translate-y-[1px];
+  background-image: var(--gradient);
+}
+
+.card {
+  @apply rounded-2xl p-6 shadow-lg bg-white;
+}
