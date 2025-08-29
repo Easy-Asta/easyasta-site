@@ -1,4 +1,4 @@
-import { getServerSession, type Session } from 'next-auth';
+import { getServerSession, type Session } from 'next-auth/next';
 import { authConfig } from '../auth.config';
 
 export async function auth() {
@@ -9,3 +9,4 @@ export async function getCurrentUser(): Promise<Session['user'] | null> {
   const session = await auth();
   return session?.user ?? null;
 }
+
