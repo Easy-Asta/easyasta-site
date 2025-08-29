@@ -1,13 +1,21 @@
+import Link from 'next/link';
+
+/**
+ * Simple footer component for the EasyASTA website. Contains copyright
+ * information and a few secondary links. Adjust as needed to include
+ * additional legal notices or contact details.
+ */
 export default function Footer() {
   return (
-    <footer className="bg-gray-100 py-6 mt-12">
-      <div className="container mx-auto text-center text-sm text-gray-600">
-        <p>© {new Date().getFullYear()} EasyAster. All rights reserved.</p>
-        <p className="mt-2">
-          <a href="/privacy" className="underline">Privacy Policy</a> ·{' '}
-          <a href="/terms" className="underline">Terms & Conditions</a> ·{' '}
-          <a href="/cookies" className="underline">Cookie Policy</a>
-        </p>
+    <footer className="bg-neutral text-gray-700 border-t border-gray-200 mt-12">
+      <div className="max-w-7xl mx-auto px-4 py-8 flex flex-col md:flex-row justify-between items-center">
+        <p className="text-sm">&copy; {new Date().getFullYear()} EasyASTA. All rights reserved.</p>
+        <div className="flex space-x-4 text-sm mt-2 md:mt-0">
+          <Link href="/privacy" className="hover:underline">Privacy</Link>
+          <Link href="/terms" className="hover:underline">Terms</Link>
+          <Link href="/cookies" className="hover:underline">Cookies</Link>
+          <Link href="/data-rights" className="hover:underline">Data Rights</Link>
+        </div>
       </div>
     </footer>
   );
