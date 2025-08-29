@@ -2,18 +2,16 @@
 @tailwind components;
 @tailwind utilities;
 
-/* Import fonts from Google Fonts. Inter for headings, Lato for body text. */
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Lato:wght@400;700&display=swap');
-
-html,
-body {
-  @apply bg-neutral font-body text-gray-900;
+:root {
+  --brand: #0f172a; /* slate-900 */
 }
 
-a {
-  @apply text-primary underline;
-}
-
-a:hover {
-  @apply text-primary-dark;
-}
+html[dir="rtl"] { direction: rtl; }
+body { @apply bg-white text-slate-900 antialiased; }
+.container { @apply max-w-6xl mx-auto px-4; }
+.btn { @apply inline-flex items-center justify-center rounded-md px-4 py-2 text-sm font-medium border border-slate-300 hover:bg-slate-50; }
+.btn-primary { @apply bg-black text-white hover:bg-slate-800; }
+.badge { @apply inline-flex items-center rounded-full border px-2 py-0.5 text-xs; }
+.card { @apply rounded-xl border border-slate-200 p-6 shadow-sm bg-white; }
+.input { @apply w-full rounded-md border border-slate-300 px-3 py-2 focus:outline-none focus:ring-2 focus:ring-slate-400; }
+.label { @apply block text-sm font-medium text-slate-700 mb-1; }

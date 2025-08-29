@@ -1,22 +1,19 @@
-import Link from 'next/link';
+import Link from 'next/link'
 
-/**
- * Simple footer component for the EasyASTA website. Contains copyright
- * information and a few secondary links. Adjust as needed to include
- * additional legal notices or contact details.
- */
-export default function Footer() {
+export default function Footer(){
   return (
-    <footer className="bg-neutral text-gray-700 border-t border-gray-200 mt-12">
-      <div className="max-w-7xl mx-auto px-4 py-8 flex flex-col md:flex-row justify-between items-center">
-        <p className="text-sm">&copy; {new Date().getFullYear()} EasyASTA. All rights reserved.</p>
-        <div className="flex space-x-4 text-sm mt-2 md:mt-0">
-          <Link href="/privacy" className="hover:underline">Privacy</Link>
-          <Link href="/terms" className="hover:underline">Terms</Link>
-          <Link href="/cookies" className="hover:underline">Cookies</Link>
-          <Link href="/data-rights" className="hover:underline">Data Rights</Link>
-        </div>
+    <footer className="border-t mt-16">
+      <div className="container py-10 text-sm text-slate-600 space-y-3">
+        <p><strong>Non‑affiliation:</strong> EasyASTA is not a government website. You can apply directly via the official U.S. CBP ESTA portal at a lower cost.</p>
+        <nav className="flex flex-wrap gap-4">
+          <Link href="/legal/non-affiliation">Non‑Affiliation</Link>
+          <Link href="/legal/terms">Terms</Link>
+          <Link href="/legal/privacy">Privacy</Link>
+          <Link href="/legal/cookies">Cookies</Link>
+          <Link href="/legal/accessibility">Accessibility</Link>
+        </nav>
+        <p className="text-xs">© {new Date().getFullYear()} EasyASTA. All rights reserved.</p>
       </div>
     </footer>
-  );
+  )
 }

@@ -1,56 +1,32 @@
-import Image from 'next/image';
-import Link from 'next/link';
+import Link from 'next/link'
+import PriceBreakdown from '@/components/PriceBreakdown'
+import Alert from '@/components/Alert'
 
-export default function HomePage() {
+export default function Page(){
   return (
-    <div>
-      {/* Hero Section */}
-      <section className="bg-neutral flex flex-col items-center text-center py-16 px-4">
-        <h1 className="text-4xl md:text-5xl font-semibold mb-4 text-primary">
-          Your Simple Gateway to US Travel
-        </h1>
-        <p className="max-w-2xl text-lg mb-8 text-gray-700">
-          EasyASTA streamlines the Electronic System for Travel Authorization (ESTA) application process.
-          Apply in minutes, securely submit your information, and receive status updates—all in one place.
-        </p>
-        <Link
-          href="/apply"
-          className="inline-block bg-accent text-white px-6 py-3 rounded-md text-lg font-medium shadow-md hover:bg-accent-dark"
-        >
-          Start Your Application
-        </Link>
-      </section>
-
-      {/* Benefits Section */}
-      <section className="py-16 px-4 max-w-7xl mx-auto">
-        <h2 className="text-3xl font-semibold text-center mb-8">Why choose EasyASTA?</h2>
-        <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
-          <div className="p-6 bg-white rounded-lg shadow">
-            <h3 className="text-xl font-semibold mb-2 text-primary">Fast & Simple</h3>
-            <p>Our intuitive form guides you through each step so you can complete your application in minutes.</p>
-          </div>
-          <div className="p-6 bg-white rounded-lg shadow">
-            <h3 className="text-xl font-semibold mb-2 text-primary">Secure & Private</h3>
-            <p>We encrypt sensitive information at rest and in transit. Your data is handled with care.</p>
-          </div>
-          <div className="p-6 bg-white rounded-lg shadow">
-            <h3 className="text-xl font-semibold mb-2 text-primary">Expert Support</h3>
-            <p>Need help? Our team is here to assist you via email. We’re independent and not affiliated with the US government.</p>
-          </div>
+    <div className="space-y-8">
+      <section className="text-center space-y-4">
+        <span className="badge">ASTA = Assisted Secure Travel Applications</span>
+        <h1 className="text-3xl sm:text-5xl font-extrabold">Apply · Submit · Track · Approve</h1>
+        <p className="text-slate-600 max-w-2xl mx-auto">Fast, friendly help to get your U.S. ESTA right the first time. We’re not a government website — we’re a private service that prepares your application and keeps you updated.</p>
+        <div className="flex gap-3 justify-center">
+          <Link className="btn btn-primary" href="/apply">Start application</Link>
+          <Link className="btn" href="/how-it-works">How it works</Link>
         </div>
       </section>
-
-      {/* Call to action Section */}
-      <section className="bg-primary text-white py-16 px-4 text-center">
-        <h2 className="text-3xl font-semibold mb-4">Ready to travel?</h2>
-        <p className="mb-6">Start your ESTA application today and receive your authorization quickly.</p>
-        <Link
-          href="/apply"
-          className="inline-block bg-accent text-white px-6 py-3 rounded-md text-lg font-medium shadow-md hover:bg-accent-dark"
-        >
-          Apply Now
-        </Link>
+      <section className="grid md:grid-cols-2 gap-6">
+        <PriceBreakdown />
+        <div className="card">
+          <h3 className="font-semibold mb-2">Why EasyASTA?</h3>
+          <ul className="list-disc pl-5 space-y-1 text-slate-700">
+            <li>Clear steps and checks before submission</li>
+            <li>Email updates and status tracker</li>
+            <li>Multilingual support (EN, ES, FR, AR, UR)</li>
+            <li>Secure forms, anti‑bot protection, and privacy by design</li>
+          </ul>
+        </div>
       </section>
+      <Alert>Prefer to DIY? Apply direct with U.S. CBP for just the official fee. We’ll always show you that option.</Alert>
     </div>
-  );
+  )
 }
