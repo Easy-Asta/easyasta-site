@@ -1,0 +1,15 @@
+{
+  "home.title": "Your Simple Gateway to US Travel",
+  "home.description": "EasyASTA streamlines the Electronic System for Travel Authorization (ESTA) application process.",
+  "home.cta": "Start Your Application",
+  "benefits.title": "Why choose EasyASTA?",
+  "benefits.fast": "Fast & Simple",
+  "benefits.fastDesc": "Our intuitive form guides you through each step so you can complete your application in minutes.",
+  "benefits.secure": "Secure & Private",
+  "benefits.secureDesc": "We encrypt sensitive information at rest and in transit. Your data is handled with care.",
+  "benefits.support": "Expert Support",
+  "benefits.supportDesc": "Need help? Our team is here to assist you via email. We’re independent and not affiliated with the US government.",
+  "cta.title": "Ready to travel?",
+  "cta.desc": "Start your ESTA application today and receive your authorization quickly.",
+  "cta.button": "Apply Now"
+}

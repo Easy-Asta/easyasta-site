@@ -15,6 +15,13 @@ const nextConfig = {
   experimental: {
     appDir: true,
   },
+  // Internationalisation: define locales and default locale. This works in
+  // conjunction with next-intl. The default locale is English, and
+  // additional locales are Spanish, French, Arabic and Urdu.
+  i18n: {
+    locales: ['en', 'es', 'fr', 'ar', 'ur'],
+    defaultLocale: 'en',
+  },
 };
 
 module.exports = withSentryConfig(nextConfig, {
