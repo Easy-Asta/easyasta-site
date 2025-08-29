@@ -1,5 +1,5 @@
 import { getServerSession, type Session } from 'next-auth';
-import { athConfig } from '../auth.config';
+import { authConfig } from '../auth.config';
 
 export async function auth() {
   return getServerSession(authConfig);
