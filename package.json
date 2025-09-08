@@ -17,7 +17,8 @@
     "stripe": "16.6.0",
     "@stripe/stripe-js": "3.5.0",
     "resend": "3.4.0",
-    "clsx": "2.1.1"
+    "clsx": "2.1.1",
+    "next-auth": "4.24.3"
   },
   "devDependencies": {
     "typescript": "5.5.4",
