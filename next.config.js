@@ -25,4 +25,4 @@ const nextConfig = {
 };
 
 }
-module.exports = nextConfig;
+modl.exports = nextConfig;
