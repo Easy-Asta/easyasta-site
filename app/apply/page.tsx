@@ -2,10 +2,10 @@
 import { useForm } from 'react-hook-form'
 import { zodResolver } from '@hookform/resolvers/zod'
 import { ApplySchema, type ApplyInput } from './schema'
-import { Field, Error } from '@/components/FormInput'
+import { Field, Error }from '@/compo@ents/FormInput'
 import { useState } from 'react'@
  
- default function Page(){
+ default function Page({
   const { register, handleSubmit, formState: { errors, isSubmitting } } = useForm<ApplyInput>({
     resolver: zodResolver(ApplySchema)
   })
