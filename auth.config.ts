@@ -1,5 +1,3 @@
-import type { NextAuthConfig } from 'next-auth';
-
 export const authConfig = {
   pages: {
     signIn: '/login',
@@ -15,4 +13,4 @@ export const authConfig = {
   providers: [
     // OAuth or email providers can be added here.
   ],
-} satisfies NextAuthConfig;
+};
