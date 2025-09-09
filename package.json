@@ -20,6 +20,11 @@
     "clsx": "2.1.1",
     "@hookform/resolvers": "5.2.1",
     "@vercel/blob": "1.1.1",
+    "prisma": "5.0.0",
+    "@prisma/client": "5.0.0",
+    "@paypal/checkout-server-sdk": "1.0.3",
+    "@paypal/react-paypal-js": "7.0.0",
+    "@stripe/react-stripe-js": "2.0.0",
     "next-auth": "5.0.0-beta.29"
   },
   "devDependencies": {
