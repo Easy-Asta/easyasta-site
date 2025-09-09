@@ -1,5 +1,6 @@
 'use client';
-This page allows users to submit data rights requests (e.g. access or erasure requests).
+
+// This page allows users to submit data rights requests (e.g. access or erasure requests).
 // It renders a simple form with fields for name, email, request type and message.
 // When submitted, the form posts to the `/api/data-rights` endpoint defined in this project.
 
