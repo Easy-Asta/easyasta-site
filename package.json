@@ -26,7 +26,7 @@
     "@paypal/react-paypal-js": "7.0.0",
     "
     "next-auth": "5.0.0-beta.29"
-  },
+  }
   "devDep
     "typescript": "5.5.4",
     "eslint": "8.57.0",
