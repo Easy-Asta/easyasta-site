@@ -1,4 +1,4 @@
-export const metadata = { title: 'Privacy — EasyASTA' }
+export const metadata = { title:https://github.com/Easy-Asta/easyasta-site/tree/main 'Privacy — EasyASTA' }
 export default function Page(){
   return (
     <article className="prose">
